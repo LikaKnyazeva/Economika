@@ -1,4 +1,0 @@
-# Economika
-# Economika
-# Economika
-# Economika
