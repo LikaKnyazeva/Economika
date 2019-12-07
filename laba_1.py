@@ -6,59 +6,59 @@ t = 3
 
 #Меняются
 # 2
-price_build = 87000
+price_build = 64000
 # 3
-price_car = 18000
+price_car = 72000
 # 4
-price_comp = 12000
+price_comp = 48000
 # 5
-price_verst = 200000
+price_verst = 250000
 # 12
-tax_build = 11300
+tax_build = 8300
 # 13
-tax_car = 1600
+tax_car = 6500
 # 14
-tax_comp = 500
+tax_comp = 1900
 # 15
-tax_verst = 16000
+tax_verst = 20000
 # 16
-mont_build = 5200
+mont_build = 3800
 # 17
-mont_car = 200
+mont_car = 700
 # 18
-mont_comp = 100
+mont_comp = 500
 # 19
-mont_verst = 7000
+mont_verst = 8800
 # 2
-t_enter_build = 6
+t_enter_build = 8
 # 3
-t_enter_car = 3
+t_enter_car = 11
 # 4
-t_enter_comp = 3
+t_enter_comp = 11
 # 5
-t_enter_verst = 7
+t_enter_verst = 3
 # 6
-V_vuv_build = 110000
+V_vuv_build = 81000
 # 7
-V_vuv_car = 16000
+V_vuv_car = 63000
 # 8
-V_vuv_comp = 8000
+V_vuv_comp = 34000
 # 9
-V_vuv_verst = 191000
+V_vuv_verst = 239000
 # 6
 t_exit_build = 3
 # 7
-t_exit_car = 2
+t_exit_car = 7
 # 8
 t_exit_comp = 6
 # 9
-t_exit_verst = 1
+t_exit_verst = 6
 # 10
-q_10 = 3560
+q_10 = 4450
 # 11
-q_11 = 1800
+q_11 = 1200
 # 20
-p = 4.49
+p = 3.74
 
 
 # Расчеты
@@ -79,11 +79,8 @@ Vvv_car = sum(price_car, tax_car, mont_car)
 Vvv_comp = sum(price_comp, tax_comp, mont_comp)
 Vvv_verst = sum(price_verst, tax_verst, mont_verst)
 
-Vvv_sum = mult(Vvv_build, (t_enter_build / 12)) + mult(Vvv_car, (t_enter_car / 12)) + mult(Vvv_comp,
-                                                                                           (t_enter_comp / 12)) + mult(
-    Vvv_verst, (t_enter_verst / 12))
-Vvuv_sum = mult(V_vuv_build, (t_exit_build / 12)) + mult(V_vuv_car, (t_exit_car / 12)) + mult(V_vuv_comp, (
-            t_exit_comp / 12)) + mult(V_vuv_verst, (t_exit_verst / 12))
+Vvv_sum = mult(Vvv_build, (t_enter_build / 12)) + mult(Vvv_car, (t_enter_car / 12)) + mult(Vvv_comp, (t_enter_comp / 12)) + mult(Vvv_verst, (t_enter_verst / 12))
+Vvuv_sum = mult(V_vuv_build, (t_exit_build / 12)) + mult(V_vuv_car, (t_exit_car / 12)) + mult(V_vuv_comp, (t_exit_comp / 12)) + mult(V_vuv_verst, (t_exit_verst / 12))
 V_ser = Vpoch + Vvv_sum - Vvuv_sum
 
 Vv_build = Vvv_build / (1 + (p / 100))**3
@@ -143,8 +140,8 @@ print("Вп.комп =", str(price_comp), "+", str(tax_comp), "+", str(mont_comp
 print("Вп.верст =", str(price_verst), "+", str(tax_verst), "+", str(mont_verst), "=", str(Vvv_verst))
 
 print("Середньорічна вартість основних фондів")
-print("В.вв.сум =", str(Vvv_build), "*", str(t_enter_build / 12), "+", str(Vvv_car), "*", str(t_enter_car / 12),
-      str(Vvv_comp), "*", str(t_enter_comp / 12), str(Vvv_verst), "*", str(t_enter_verst / 12), "=", str(Vvv_sum))
+print("В.вв.сум =", str(Vvv_build), "*", str(t_enter_build / 12), "+", str(Vvv_car), "*", str(t_enter_car / 12), "+",
+      str(Vvv_comp), "*", str(t_enter_comp / 12),"+", str(Vvv_verst), "*", str(t_enter_verst / 12), "=", str(Vvv_sum))
 print("В.вив.сум =", str(V_vuv_build), "*", str(t_exit_build / 12), "+", str(V_vuv_car), "*", str(t_exit_car / 12),
       "+", str(V_vuv_comp), "*", str(t_exit_comp / 12), "+", str(V_vuv_verst), "*", str(t_exit_verst / 12), "=",
       str(Vvuv_sum))

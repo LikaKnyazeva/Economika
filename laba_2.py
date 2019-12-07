@@ -18,36 +18,41 @@ CiA = 0.78 * 25
 
 # Изменяемые данные
 # 1
-Tpoct = 14
+Tpoct = 15
 # 2
 Tzp = 5
 # 4
-QchiA = 9
-QchiB = 7
-QchiC = 12
+QchiA = 10
+QchiB = 8
+QchiC = 13
 QchiD = 6
 # 3
-KmfA = 0.46
-KmfB = 0.63
-KmfC = 0.56
-KmfD = 0.52
-KmplA = 0.49
-KmplB = 0.61
-KmplC = 0.53
-KmplD = 0.63
+KmfA = 0.49
+KmfB = 0.68
+KmfC = 0.59
+KmfD = 0.86
+KmplA = 0.67
+KmplB = 0.65
+KmplC = 0.56
+KmplD = 0.68
 # 11
-Nif = 230000
+Nif = 231000
 # 5
-Nipl = 140000
+Nipl = 150000
 # 6
-Snozpl = 200000
+Snozpl = 64000
 # 7
-Suzf = 168000
+Suzf = 52200
 # 9
-CoA = 25
-CoB = 13
-CoC = 12
-CoD = 9
+CoA = 27
+CoB = 14
+CoC = 13
+CoD = 10
+# 8
+TcA = 6
+TcB = 13
+TcC = 10
+TcD = 8
 
 # Решения
 # Маса (площа) і-го виду заготовки
@@ -80,8 +85,8 @@ Zserf = Zstrf + 0.5 * Zpotf
 Zserpl = Zstrpl + 0.5 * Zpotpl
 
 # максимальний запас матеріалу:
-Zmaxf = Zpotf + 0.5 * Zstrf
-Zmaxpl = Zpotpl + 0.5 * Zstrpl
+Zmaxf = Zpotf + Zstrf
+Zmaxpl = Zpotpl + Zstrpl
 
 # Обсяг реалізованої продукції підприємства
 Qrm = 25 * Nif * NifA + 30 * Nif * NifB + 18 * Nif * NifC + 45 * Nif * NifD
@@ -124,6 +129,39 @@ CpiplB = CviplB - CoB
 CpiplC = CviplC - CoC
 CpiplD = CviplD - CoD
 
+# Коефіцієнт наростання витрат
+KifA = (CoA + 0.5*CpifA)/(CoA+CpifA)
+KifB = (CoB + 0.5*CpifB)/(CoB+CpifB)
+KifC = (CoC + 0.5*CpifC)/(CoC+CpifC)
+KifD = (CoD + 0.5*CpifD)/(CoD+CpifD)
+
+KiplA = (CoA + 0.5*CpiplA)/(CoA+CpiplA)
+KiplB = (CoB + 0.5*CpiplB)/(CoB+CpiplB)
+KiplC = (CoC + 0.5*CpiplC)/(CoC+CpiplC)
+KiplD = (CoD + 0.5*CpiplD)/(CoD+CpiplD)
+
+# Норму запасу оборотних фондів
+
+HifA = (CiA*NifA*TcA*KifA)/360
+HifB = (CiB*NifB*TcB*KifB)/360
+HifC = (CiC*NifC*TcC*KifC)/360
+HifD = (CiD*NifD*TcD*KifD)/360
+HiplA = (CiA*NiplA*TcA*KiplA)/360
+HiplB = (CiB*NiplB*TcB*KiplB)/360
+HiplC = (CiC*NiplC*TcC*KiplC)/360
+HiplD = (CiD*NiplD*TcD*KiplD)/360
+
+# коефіцієнт завантаження
+Kzavf = Suzf/Qrm
+Kzavpl = Snozpl/Qrpl
+
+# матеріаловіддача
+Mvf = Qrm/Msf
+Mvpl = Qrpl/Mspl
+
+# Коефіцієнт використання матеріалів
+Kvukmf = (NifA*QchiA+NifB*QchiB+NifC*QchiC+NifD*QchiD)/Msf
+Kvukmpl = (NiplA*QchiA+NiplB*QchiB+NiplC*QchiC+NiplD*QchiD)/Mspl
 
 # Вывод, що писать
 
@@ -133,11 +171,11 @@ print("Маса (площа) і-го виду заготовки")
 print("q.зі.ф.А = ", str(QchiA), "/", str(KmfA), "=", str(QzifA))
 print("q.зі.ф.Б = ", str(QchiB), "/", str(KmfB), "=", str(QzifB))
 print("q.зі.ф.В = ", str(QchiC), "/", str(KmfC), "=", str(QzifC))
-print("q.зі.ф.Д= ", str(QchiD), "/", str(KmfD), "=", str(QzifD))
+print("q.зі.ф.Г = ", str(QchiD), "/", str(KmfD), "=", str(QzifD))
 print("q.зі.пл.А = ", str(QchiA), "/", str(KmplA), "=", str(QziplA))
 print("q.зі.пл.Б = ", str(QchiB), "/", str(KmplB), "=", str(QziplB))
-print("q.зі.пл.C = ", str(QchiC), "/", str(KmplC), "=", str(QziplC))
-print("q.зі.пл.Д = ", str(QchiD), "/", str(KmplD), "=", str(QziplD))
+print("q.зі.пл.В = ", str(QchiC), "/", str(KmplC), "=", str(QziplC))
+print("q.зі.пл.Г = ", str(QchiD), "/", str(KmplD), "=", str(QziplD))
 
 print("Сумарна потреба підприємства в певному матеріалі у натуральних одиницях:")
 print("М.с.ф = ", str(Nif), "*", str(NifA), "*", str(QzifA), "+", str(Nif), "*", str(NifB), "*", str(QzifB), "+",
@@ -151,8 +189,8 @@ print("Cередній запас матеріалу")
 print("З.сер.ф. = ", str(Zstrf), "+ 0.5*", str(Zpotf), "=", str(Zserf))
 print("З.сер.пл. = ", str(Zstrpl), "+ 0.5*", str(Zpotpl), "=", str(Zserpl))
 print("Максимальний запас матеріалу:")
-print("З.мак.ф. = ", str(Zpotf), "+ 0.5*", str(Zstrf), "=", str(Zmaxf))
-print("З.мак.пл. = ", str(Zpotpl), "+ 0.5*", str(Zstrpl), "=", str(Zmaxpl))
+print("З.мак.ф. = ", str(Zpotf), "+", str(Zstrf), "=", str(Zmaxf))
+print("З.мак.пл. = ", str(Zpotpl), "+", str(Zstrpl), "=", str(Zmaxpl))
 
 print("2. Розрахувати кількість днів скорочення періоду обороту оборотних засобів та абсолютну і відносну суму "
       "вивільнення оборотних засобів в цілому.")
@@ -179,3 +217,69 @@ print("ВОЗа = ", str(Qrm), "/360*", str(Dscor), "=", str(VOZa))
 
 print("Відносне вивільнення")
 print("ВОЗ% =  100 - (", str(Qrpl), "/", str(Qrm), "*100)", "=", str(VOZv))
+
+print("3. Розрахувати норму запасу оборотних фондів у незавершеному виробництві"
+      "по кожному виробу (за планом і за фактом).")
+
+print("Повна собівартість всієї партії продукції")
+print("С.ві.фп.А = ", str(CiA), "*", str(NifA), "=", str(CvifpA))
+print("С.ві.фп.Б = ", str(CiB), "*", str(NifB), "=", str(CvifpB))
+print("С.ві.фп.В = ", str(CiC), "*", str(NifC), "=", str(CvifpC))
+print("С.ві.фп.Г = ", str(CiD), "*", str(NifD), "=", str(CvifpD))
+print("С.ві.пл.А = ", str(CiA), "*", str(NiplA), "=", str(CviplA))
+print("С.ві.пл.Б = ", str(CiB), "*", str(NiplB), "=", str(CviplB))
+print("С.ві.пл.В = ", str(CiC), "*", str(NiplC), "=", str(CviplC))
+print("С.ві.пл.Г = ", str(CiD), "*", str(NiplD), "=", str(CviplD))
+
+print("сума поточних витрат у собівартості всієї партії виробів")
+print("C.пі.ф.А = ", str(CvifpA), "-", str(CoA), "=", str(CpifA))
+print("C.пі.ф.Б = ", str(CvifpB), "-", str(CoB), "=", str(CpifB))
+print("C.пі.ф.В = ", str(CvifpC), "-", str(CoC), "=", str(CpifC))
+print("C.пі.ф.Г = ", str(CvifpD), "-", str(CoD), "=", str(CpifD))
+print("C.пі.пл.А = ", str(CviplA), "-", str(CoA), "=", str(CpiplA))
+print("C.пі.пл.Б = ", str(CviplB), "-", str(CoB), "=", str(CpiplB))
+print("C.пі.пл.В = ", str(CviplC), "-", str(CoC), "=", str(CpiplC))
+print("C.пі.пл.Г = ", str(CviplD), "-", str(CoD), "=", str(CpiplD))
+
+print("Коефіцієнт наростання витрат")
+print("К.і.ф.А= ( ", str(CoA), "+ 0.5*", str(CpifA), ")/(", str(CoA), "+", str(CpifA), "=", str(KifA))
+print("К.і.ф.Б= ( ", str(CoB), "+ 0.5*", str(CpifB), ")/(", str(CoB), "+", str(CpifB), "=", str(KifB))
+print("К.і.ф.В= ( ", str(CoC), "+ 0.5*", str(CpifC), ")/(", str(CoC), "+", str(CpifC), "=", str(KifC))
+print("К.і.ф.Г= ( ", str(CoD), "+ 0.5*", str(CpifD), ")/(", str(CoD), "+", str(CpifD), "=", str(KifD))
+print("К.і.пл.А= ( ", str(CoA), "+ 0.5*", str(CpiplA), ")/(", str(CoA), "+", str(CpiplA), "=", str(KiplA))
+print("К.і.пл.Б= ( ", str(CoB), "+ 0.5*", str(CpiplB), ")/(", str(CoB), "+", str(CpiplB), "=", str(KiplB))
+print("К.і.пл.В= ( ", str(CoC), "+ 0.5*", str(CpiplC), ")/(", str(CoC), "+", str(CpiplC), "=", str(KiplC))
+print("К.і.пл.Г= ( ", str(CoD), "+ 0.5*", str(CpiplD), ")/(", str(CoD), "+", str(CpiplD), "=", str(KiplD))
+
+print("Норму запасу оборотних фондів")
+print("H.і.ф.А = ( ", str(CiA), "*", str(NifA), "*", str(TcA), "*", str(KifA), ")/360", "=", str(HifA))
+print("H.і.ф.Б = ( ", str(CiB), "*", str(NifB), "*", str(TcB), "*", str(KifB), ")/360", "=", str(HifB))
+print("H.і.ф.В = ( ", str(CiC), "*", str(NifC), "*", str(TcC), "*", str(KifC), ")/360", "=", str(HifC))
+print("H.і.ф.Г = ( ", str(CiD), "*", str(NifD), "*", str(TcD), "*", str(KifD), ")/360", "=", str(HifD))
+print("Н.і.пл.А = (", str(CiA), "*", str(NiplA), "*", str(TcA), "*", str(KiplA), ")/360", "=", str(HiplA))
+print("Н.і.пл.Б = (", str(CiB), "*", str(NiplB), "*", str(TcB), "*", str(KiplB), ")/360", "=", str(HiplB))
+print("Н.і.пл.В = (", str(CiC), "*", str(NiplC), "*", str(TcC), "*", str(KiplC), ")/360", "=", str(HiplC))
+print("Н.і.пл.Г = (", str(CiD), "*", str(NiplD), "*", str(TcD), "*", str(KiplD), ")/360", "=", str(HiplD))
+
+
+print("4.Розрахувати коефіцієнт завантаження (за планом і за фактом).")
+
+
+print("коефіцієнт завантаження")
+print("K.зав.ф.= ", str(Suzf), "/", str(Qrm), "=", str(Kzavf))
+print("K.зав.пл.= ", str(Snozpl), "/", str(Qrpl), "=", str(Kzavf))
+
+
+print("5. Розрахувати загальну матеріалоємність та матеріаловіддачу, загальний"
+      "коефіцієнт використання матеріалу в цілому по підприємству (за планом і зa фактом).")
+
+
+print("матеріаловіддача")
+print("Mв.ф = ", str(Qrm), "/", str(Msf), "=", str(Mvf))
+print("Mв.пл = ", str(Qrpl), "/", str(Mspl), "=", str(Mvpl))
+
+print("Коефіцієнт використання матеріалів")
+print("К.вик.матер.ф = (", str(NifA), "*", str(QchiA), "+", str(NifB), "*", str(QchiB), "+", str(NifC), "*", str(QchiC),
+      "+", str(NifD), "*", str(QchiD), "/", str(Msf), "=", str(Kvukmf))
+print("К.вик.матер.пл = (", str(NiplA), "*", str(QchiA), "+", str(NiplB), "*", str(QchiB), "+", str(NiplC), "*",
+      str(QchiC), "+", str(NiplD), "*", str(QchiD), "/", str(Mspl), "=", str(Kvukmpl))
