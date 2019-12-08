@@ -18,41 +18,41 @@ CiA = 0.78 * 25
 
 # Изменяемые данные
 # 1
-Tpoct = 15
+Tpoct = 10
 # 2
-Tzp = 5
+Tzp = 4
 # 4
-QchiA = 10
-QchiB = 8
-QchiC = 13
-QchiD = 6
+QchiA = 6
+QchiB = 5
+QchiC = 8
+QchiD = 4
 # 3
-KmfA = 0.49
-KmfB = 0.68
-KmfC = 0.59
-KmfD = 0.86
-KmplA = 0.67
-KmplB = 0.65
-KmplC = 0.56
-KmplD = 0.68
+KmfA = 0.33
+KmfB = 0.45
+KmfC = 0.4
+KmfD = 0.44
+KmplA = 0.35
+KmplB = 0.43
+KmplC = 0.38
+KmplD = 0.45
 # 11
-Nif = 231000
+Nif = 233000
 # 5
-Nipl = 150000
+Nipl = 100000
 # 6
-Snozpl = 64000
+Snozpl = 50000
 # 7
-Suzf = 52200
+Suzf = 42400
 # 9
-CoA = 27
-CoB = 14
-CoC = 13
-CoD = 10
+CoA = 18
+CoB = 9
+CoC = 8
+CoD = 7
 # 8
-TcA = 6
-TcB = 13
-TcC = 10
-TcD = 8
+TcA = 4
+TcB = 8
+TcC = 6
+TcD = 5
 
 # Решения
 # Маса (площа) і-го виду заготовки
@@ -101,7 +101,7 @@ Tobf = 360 / Kobf
 Tobpl = 360 / Kobpl
 
 # кількість днів скорочення періоду обороту оборотних засобів
-Dscor = Tobf - Tobpl
+Dscor = (Tobf - Tobpl)*(-1)
 
 # Абсолютне вивільнення
 VOZa = Qrm / 360 * Dscor

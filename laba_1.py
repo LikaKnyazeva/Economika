@@ -6,59 +6,59 @@ t = 3
 
 #Меняются
 # 2
-price_build = 64000
+price_build = 200000
 # 3
-price_car = 72000
+price_car = 38000
 # 4
-price_comp = 48000
+price_comp = 25000
 # 5
-price_verst = 250000
+price_verst = 126000
 # 12
-tax_build = 8300
+tax_build = 26000
 # 13
-tax_car = 6500
+tax_car = 3400
 # 14
-tax_comp = 1900
+tax_comp = 1000
 # 15
-tax_verst = 20000
+tax_verst = 10100
 # 16
-mont_build = 3800
+mont_build = 12000
 # 17
-mont_car = 700
+mont_car = 400
 # 18
-mont_comp = 500
+mont_comp = 300
 # 19
-mont_verst = 8800
+mont_verst = 4400
 # 2
-t_enter_build = 8
+t_enter_build = 11
 # 3
-t_enter_car = 11
+t_enter_car = 2
 # 4
-t_enter_comp = 11
+t_enter_comp = 6
 # 5
-t_enter_verst = 3
+t_enter_verst = 5
 # 6
-V_vuv_build = 81000
+V_vuv_build = 253000
 # 7
-V_vuv_car = 63000
+V_vuv_car = 33000
 # 8
-V_vuv_comp = 34000
+V_vuv_comp = 17000
 # 9
-V_vuv_verst = 239000
+V_vuv_verst = 138000
 # 6
-t_exit_build = 3
+t_exit_build = 2
 # 7
-t_exit_car = 7
+t_exit_car = 1
 # 8
-t_exit_comp = 6
+t_exit_comp = 3
 # 9
-t_exit_verst = 6
+t_exit_verst = 7
 # 10
-q_10 = 4450
+q_10 = 2570
 # 11
-q_11 = 1200
+q_11 = 1800
 # 20
-p = 3.74
+p = 6.47
 
 
 # Расчеты
