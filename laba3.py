@@ -1,27 +1,27 @@
 # Данные которые не меняются
 # Данные которые меняются
 # 3
-CHvsixv = 1456
+CHvsixv = 1987
 # 4
-Delta = 45.6
+Delta = 98.7
 # 6
-DeltaT = 56390
+DeltaT = 62050
 # 9
-Fd = 1940
+Fd = 1872
 # 7
-Fn = 256
+Fn = 257
 # 5
-CHp = 1649
+CHp = 2251
 # 10
-DeltaKn = 10
+DeltaKn = 9
 # 1
-Vzv = 48000
+Vzv = 12000
 # 2
-Vpl = 59310
+Vpl = 14830
 # 11
-CHzvzag = 239
+CHzvzag = 191
 # 13
-CHzv = 220
+CHzv = 160
 
 # Решение
 

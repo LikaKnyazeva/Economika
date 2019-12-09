@@ -18,41 +18,41 @@ CiA = 0.78 * 25
 
 # Изменяемые данные
 # 1
-Tpoct = 10
+Tpoct = 18
 # 2
-Tzp = 4
+Tzp = 6
 # 4
-QchiA = 6
-QchiB = 5
-QchiC = 8
-QchiD = 4
+QchiA = 12
+QchiB = 9
+QchiC = 15
+QchiD = 7
 # 3
-KmfA = 0.33
-KmfB = 0.45
-KmfC = 0.4
-KmfD = 0.44
-KmplA = 0.35
-KmplB = 0.43
-KmplC = 0.38
-KmplD = 0.45
+KmfA = 0.59
+KmfB = 0.81
+KmfC = 0.71
+KmfD = 0.79
+KmplA = 0.63
+KmplB = 0.78
+KmplC = 0.68
+KmplD = 0.81
 # 11
-Nif = 233000
+Nif = 231000
 # 5
-Nipl = 100000
+Nipl = 180000
 # 6
-Snozpl = 50000
+Snozpl = 74000
 # 7
-Suzf = 42400
+Suzf = 61200
 # 9
-CoA = 18
-CoB = 9
-CoC = 8
-CoD = 7
+CoA = 32
+CoB = 17
+CoC = 12
+CoD = 15
 # 8
-TcA = 4
-TcB = 8
-TcC = 6
-TcD = 5
+TcA = 7
+TcB = 15
+TcC = 12
+TcD = 9
 
 # Решения
 # Маса (площа) і-го виду заготовки

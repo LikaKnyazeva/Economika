@@ -6,59 +6,59 @@ t = 3
 
 #Меняются
 # 2
-price_build = 200000
+price_build = 150000
 # 3
-price_car = 38000
+price_car = 75000
 # 4
-price_comp = 25000
+price_comp = 50000
 # 5
-price_verst = 126000
+price_verst = 120000
 # 12
-tax_build = 26000
+tax_build = 19500
 # 13
-tax_car = 3400
+tax_car = 6800
 # 14
-tax_comp = 1000
+tax_comp = 2000
 # 15
-tax_verst = 10100
+tax_verst = 9600
 # 16
-mont_build = 12000
+mont_build = 9000
 # 17
-mont_car = 400
+mont_car = 800
 # 18
-mont_comp = 300
+mont_comp = 500
 # 19
-mont_verst = 4400
+mont_verst = 4200
 # 2
-t_enter_build = 11
+t_enter_build = 3
 # 3
-t_enter_car = 2
+t_enter_car = 3
 # 4
 t_enter_comp = 6
 # 5
-t_enter_verst = 5
+t_enter_verst = 8
 # 6
-V_vuv_build = 253000
+V_vuv_build = 190000
 # 7
-V_vuv_car = 33000
+V_vuv_car = 65000
 # 8
-V_vuv_comp = 17000
+V_vuv_comp = 35000
 # 9
-V_vuv_verst = 138000
+V_vuv_verst = 131000
 # 6
-t_exit_build = 2
+t_exit_build = 5
 # 7
-t_exit_car = 1
+t_exit_car = 3
 # 8
 t_exit_comp = 3
 # 9
-t_exit_verst = 7
+t_exit_verst = 2
 # 10
-q_10 = 2570
+q_10 = 2450
 # 11
-q_11 = 1800
+q_11 = 1500
 # 20
-p = 6.47
+p = 6.45
 
 
 # Расчеты
@@ -166,10 +166,10 @@ print("Фо = ", str(V_ser), "/", str(q_11), "=", str(F_ozbr))
 print("3. Визначити коефіцієнти оновлення та вибуття за поточний рік.")
 
 print("Розрахувати амортизацію")
-print("А.річ.буд = ", str(Vvv_build), "*0.9)/20 =", str(Arich_build))
-print("А.річ.маш = ", str(Vvv_car), "*0.9)/5 =", str(Arich_car))
-print("А.річ.комп = ", str(Vvv_comp), "*0.9)/3 =", str(Arich_comp))
-print("А.річ.верст = ", str(Vvv_verst), "*0.9)/5 =", str(Arich_verst))
+print("А.річ.буд = ", str(Vvv_build), "*0.9/20 =", str(Arich_build))
+print("А.річ.маш = ", str(Vvv_car), "*0.9/5 =", str(Arich_car))
+print("А.річ.комп = ", str(Vvv_comp), "*0.9/3 =", str(Arich_comp))
+print("А.річ.верст = ", str(Vvv_verst), "*0.9/5 =", str(Arich_verst))
 print("А.річ.заг. =", str(Apoch), "+", str(Arich_build), "+", str(Arich_car), "+", str(Arich_comp), "+",
       str(Arich_verst), "=", str(Azag))
 
